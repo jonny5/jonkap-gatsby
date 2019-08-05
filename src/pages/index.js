@@ -14,7 +14,7 @@ const IndexPage = () => (
     <SEO title="Jon Kaplan" keywords={[`jon`, `kaplan`, `meditation`]} />
     <div>
       <Balloon  style={{marginLeft: "200px", marginBottom: "-10px"}}  fromLeft>
-        Gone until August 13th
+        I'm away until August 12th
       </Balloon>
       <div style={{ maxWidth: `300px`, }}>
         <img src={RobotImage} />
