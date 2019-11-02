@@ -27,8 +27,7 @@ const IndexPage = () => (
 const dateText = () => {
   const now = moment();
   const busyDateRanges = [
-    [moment("2019-08-17"), moment("2019-08-28")],
-    [moment("2019-09-20"), moment("2019-11-08")]
+    [moment("2019-11-14"), moment("2019-12-10")]
   ];
   let text = "I am generally available";
 
