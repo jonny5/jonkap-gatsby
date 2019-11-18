@@ -1,0 +1,3 @@
+[submodule "NES.css"]
+	path = NES.css
+	url = https://github.com/nostalgic-css/NES.css

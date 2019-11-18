@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import RobotImage from "../images/j5.gif"
 import * as moment from 'moment';
+import "../nes.css/scss/nes.scss";
 
 import {
   Balloon,
