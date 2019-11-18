@@ -1,6 +1,5 @@
 import React from "react"
-// import { Link } from "gatsby"
-
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import RobotImage from "../images/j5.gif"
@@ -10,20 +9,24 @@ import {
   Balloon,
 } from "nes-react";
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Jon Kaplan" keywords={[`jon`, `kaplan`, `meditation`]} />
-    <div>
-      <Balloon  style={{marginLeft: "200px", marginBottom: "-10px"}}  fromLeft>
-        { dateText() }
-      </Balloon>
-      <div style={{ maxWidth: `300px`, }}>
-        <img alt="jonny5" src={RobotImage} />
-      </div>
-    </div>
-  </Layout>
-)
 
+class BlogIndexPage extends React.Component {
+  render() {
+    const { data } = this.props
+    const siteTitle = data.site.siteMetadata.title
+
+    return (
+      <Layout location={this.props.location} title={siteTitle}>
+        <SEO title="Jon Kaplan" keywords={[`jon`, `kaplan`, `meditation`]} />
+        <div>
+          <div style={{ maxWidth: `300px`, }}>
+            <img alt="jonny5" src={RobotImage} />
+          </div>
+        </div>
+      </Layout>
+    )
+  }
+}
 const dateText = () => {
   const now = moment();
   const busyDateRanges = [
@@ -48,4 +51,29 @@ const dateText = () => {
   return text;
 }
 
-export default IndexPage
+export default BlogIndexPage
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+          }
+        }
+      }
+    }
+  }
+`
