@@ -1,25 +1,28 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import RobotImage from "../images/j5.gif"
-import * as moment from 'moment';
-import "../nes.css/scss/nes.scss";
+import * as moment from 'moment'
+import {Helmet} from "react-helmet";
 
 import {
   Balloon,
-} from "nes-react";
+} from "nes-react"
 
 
 class BlogIndexPage extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Jon Kaplan" keywords={[`jon`, `kaplan`, `meditation`]} />
+        <Helmet link={[{rel: 'stylesheet', href: 'https://unpkg.com/nes.css@latest/css/nes.min.css'}]} />
         <div>
+          <Balloon  style={{marginLeft: "200px", marginBottom: "-10px"}}  fromLeft>
+            { dateText() }
+          </Balloon>
           <div style={{ maxWidth: `300px`, }}>
             <img alt="jonny5" src={RobotImage} />
           </div>
