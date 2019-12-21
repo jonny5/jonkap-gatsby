@@ -1,71 +1,94 @@
 import Typography from "typography"
+import Wordpress2016 from "typography-theme-wordpress-2016"
+import gray from "gray-percentage"
+import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants"
 
 const typography = new Typography({
-  googleFonts: [{
-    name: 'Press Start 2P',
-    styles: [],
-  }],
-  title: "Wordpress Kubrick",
-  baseFontSize: "12px",
-  baseLineHeight: 1.4,
-  headerFontFamily: ["Lucida Grande", "Verdana", "Arial", "Sans-Serif"],
-  bodyFontFamily: ["Lucida Grande", "Verdana", "Arial", "Sans-Serif"],
-  bodyColor: "hsla(0,0%,0%,0.8)",
-  headerWeight: "bold",
-  bodyWeight: "normal",
-  boldWeight: "bold",
-
-  overrideStyles: ({ rhythm }) => ({
-    h2: {
-      marginTop: rhythm(2),
+  title: "Wordpress Theme 2016",
+  baseFontSize: "16px",
+  baseLineHeight: 1.75,
+  scaleRatio: 5 / 2,
+  googleFonts: [
+    {
+      name: 'Press Start 2P',
+      styles: [],
     },
-    h3: {
-      marginTop: rhythm(2),
+    {
+      name: 'Lato',
+      styles: [],
     },
-    p: {
-      marginBottom: "1em",
-      marginTop: "1em",
+  ],
+  headerFontFamily: ["Lato", "Georgia", "serif"],
+  bodyFontFamily: ["Lato", "Georgia", "serif"],
+  bodyColor: "hsla(0,0%,0%,0.9)",
+  headerWeight: 900,
+  bodyWeight: 400,
+  boldWeight: 700,
+  overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
+    // h1: {
+    //   fontFamily: ["Montserrat", "sans-serif"].join(","),
+    // },
+    blockquote: {
+      ...scale(1 / 5),
+      color: gray(41),
+      fontStyle: "italic",
+      paddingLeft: rhythm(13 / 16),
+      marginLeft: rhythm(-1),
+      borderLeft: `${rhythm(3 / 16)} solid ${gray(10)}`,
     },
-    ol: {
+    "blockquote > :last-child": {
       marginBottom: 0,
-      marginLeft: rhythm(2.125),
+    },
+    "blockquote cite": {
+      ...adjustFontSizeTo(options.baseFontSize),
+      color: options.bodyColor,
+      fontWeight: options.bodyWeight,
+    },
+    "blockquote cite:before": {
+      content: '"— "',
     },
     ul: {
-      listStyle: "none",
-      marginLeft: 0,
-      paddingLeft: rhythm(5 / 8),
-      textIndent: rhythm(-5 / 8),
+      listStyle: "disc",
     },
-    li: {
-      display: "list-item",
-      marginLeft: rhythm(5 / 8),
+    "ul,ol": {
+      // marginLeft: rhythm(1),
     },
-    "ul li:before": {
-      content: '"» "',
+    [MOBILE_MEDIA_QUERY]: {
+      "ul,ol": {
+        marginLeft: rhythm(1),
+      },
+      blockquote: {
+        marginLeft: rhythm(-3 / 4),
+        marginRight: 0,
+        paddingLeft: rhythm(9 / 16),
+      },
+    },
+    "h1,h2,h3,h4,h5,h6": {
+      marginTop: rhythm(2),
+    },
+    h4: {
+      letterSpacing: "0.140625em",
+      textTransform: "uppercase",
+    },
+    h6: {
+      fontStyle: "italic",
     },
     a: {
-      color: "#06c",
+      boxShadow: "0 1px 0 0 currentColor",
+      color: "#007acc",
       textDecoration: "none",
     },
-    "a:hover": {
-      color: "#147",
-      textDecoration: "underline",
+    "a:hover,a:active": {
+      boxShadow: "none",
     },
-    "a:visited": {
-      color: "#b85b5a",
-    },
-    blockquote: {
-      // color: gray(47),
-      marginTop: rhythm(1),
-      marginRight: rhythm(2),
-      marginBottom: 0,
-      marginLeft: rhythm(5 / 8),
-      paddingLeft: rhythm(1.25),
-      // borderLeft: `${rhythm(1 / 3)} solid ${gray(87)}`,
+    "mark,ins": {
+      background: "#007acc",
+      color: "white",
+      padding: `${rhythm(1 / 16)} ${rhythm(1 / 8)}`,
+      textDecoration: "none",
     },
   }),
-  }
-)
+});
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
