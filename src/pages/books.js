@@ -14,6 +14,8 @@ class BooksPage extends React.Component {
   }
 }
 
+export default BooksPage
+
 export const pageQuery = graphql`
   query {
     site {
