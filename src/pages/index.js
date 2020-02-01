@@ -25,7 +25,6 @@ class BlogIndexPage extends React.Component {
           </Balloon>
           <div style={{ maxWidth: `300px`, }}>
             <img alt="jonny5" src={RobotImage} />
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc9qiw7Lj5-dgtn_0gTGtLLlIBPVZPGRdggM11E8EodmPnT7w/viewform?embedded=true" width="640" height="331" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
           </div>
         </div>
       </Layout>
@@ -35,7 +34,7 @@ class BlogIndexPage extends React.Component {
 const dateText = () => {
   const now = moment();
   const busyDateRanges = [
-    [moment("2019-12-04"), moment("2019-12-20")]
+    [moment("2020-2-01"), moment("2020-03-02")]
   ];
   let text = "I am generally available";
 
