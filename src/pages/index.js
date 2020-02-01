@@ -43,7 +43,7 @@ const dateText = () => {
       text = "I'm around until " + dateRange[0].format("MMMM Do");
     } else if (now > dateRange[0] && now < dateRange[1])  {
       const dateDiff = dateRange[1].diff(dateRange[0], 'days');
-      if(dateDiff < 30) {
+      if(dateDiff < 35) {
         text = "I'm away until " + dateRange[1].format("MMMM Do");
       } else {
         text = "I'm away indefinitely. I will update this when I am back at my computer";
