@@ -34,7 +34,7 @@ class BlogIndexPage extends React.Component {
 const dateText = () => {
   const now = moment();
   const busyDateRanges = [
-    [moment("2020-2-01"), moment("2020-03-02")]
+    [moment("2020-1-31"), moment("2020-03-02")]
   ];
   let text = "I am generally available";
 
