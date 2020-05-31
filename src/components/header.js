@@ -1,21 +1,18 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import Logo from "../components/logo"
+import logo from "../images/capcomlogo.png" // Tell webpack this JS file uses this image
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
       background: `white`,
-      // borderBottom: `1px solid black`,
-      // marginBottom: `1.45rem`,
     }}
   >
     <div
       style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 0rem`,
       }}
     >
       <h1 style={{ margin: 0 }}>
@@ -26,7 +23,7 @@ const Header = ({ siteTitle }) => (
           }}
         >
         <div style={{ maxWidth: `300px`}}>
-          <Logo />
+           <img src={logo} alt="Logo" style={{marginBottom: 0}} />
         </div>
         </Link>
       </h1>
