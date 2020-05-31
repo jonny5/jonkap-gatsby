@@ -33,23 +33,20 @@ class BlogIndexPage extends React.Component {
 }
 const dateText = () => {
   const now = moment();
-  const busyDateRanges = [
-    [moment("2020-01-30"), moment("2020-03-02")]
-  ];
   let text = "I am generally available";
 
-  for (let dateRange of busyDateRanges) {
-    if(now < dateRange[0]){
-      text = "I'm around until " + dateRange[0].format("MMMM Do");
-    } else if (now > dateRange[0] && now < dateRange[1])  {
-      const dateDiff = dateRange[1].diff(dateRange[0], 'days');
-      if(dateDiff < 365) {
-        text = "I'm away until " + dateRange[1].format("MMMM Do");
-      } else {
-        text = "I'm away indefinitely. I will update this when I am back at my computer";
-      }
-    }
-  }
+  // for (let dateRange of busyDateRanges) {
+  //   if(now < dateRange[0]){
+  //     text = "I'm around until " + dateRange[0].format("MMMM Do");
+  //   } else if (now > dateRange[0] && now < dateRange[1])  {
+  //     const dateDiff = dateRange[1].diff(dateRange[0], 'days');
+  //     if(dateDiff < 365) {
+  //       text = "I'm away until " + dateRange[1].format("MMMM Do");
+  //     } else {
+  //       text = "I'm away indefinitely. I will update this when I am back at my computer";
+  //     }
+  //   }
+  // }
   return text;
 }
 
