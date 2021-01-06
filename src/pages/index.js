@@ -33,7 +33,7 @@ class BlogIndexPage extends React.Component {
 }
 const dateText = () => {
   const now = moment();
-  let text = "I am generally available";
+  let text = "I am generally available!";
 
   // for (let dateRange of busyDateRanges) {
   //   if(now < dateRange[0]){
