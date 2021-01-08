@@ -4,11 +4,7 @@ import React from "react"
 import logo from "../images/capcomlogo.png" // Tell webpack this JS file uses this image
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `white`,
-    }}
-  >
+  <header>
     <div
       style={{
         margin: `0 auto`,

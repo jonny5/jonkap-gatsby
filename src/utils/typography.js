@@ -1,5 +1,5 @@
 import Typography from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
+// import Wordpress2016 from "typography-theme-wordpress-2016"
 import gray from "gray-percentage"
 import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants"
 
@@ -30,7 +30,7 @@ const typography = new Typography({
     // },
     blockquote: {
       ...scale(1 / 5),
-      color: gray(41),
+      color: "rgb(175,175,175)",
       fontStyle: "italic",
       paddingLeft: rhythm(13 / 16),
       marginLeft: rhythm(-1),
@@ -75,14 +75,15 @@ const typography = new Typography({
     },
     a: {
       boxShadow: "0 1px 0 0 currentColor",
-      color: "#007acc",
+      color: "rgb(79,140,201)",
       textDecoration: "none",
     },
     "a:hover,a:active": {
       boxShadow: "none",
+      textDecoration: "underline"
     },
     "mark,ins": {
-      background: "#007acc",
+      background: "rgb(79,140,201)",
       color: "white",
       padding: `${rhythm(1 / 16)} ${rhythm(1 / 8)}`,
       textDecoration: "none",
