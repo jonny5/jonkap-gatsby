@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import RobotImage from "../images/j5.gif"
 import * as moment from 'moment'
 import {Helmet} from "react-helmet";
-
+import '../components/nes.css'
 import {
   Balloon,
 } from "nes-react"
@@ -18,8 +18,7 @@ class BlogIndexPage extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Jon Kaplan" keywords={[`jon`, `kaplan`, `meditation`]} />
-        <Helmet link={[{rel: 'stylesheet', href: 'https://unpkg.com/nes.css@latest/css/nes.min.css'}]} />
-        <div>
+        <div className="nes">
           <Balloon  style={{marginLeft: "200px", marginBottom: "-10px"}}  fromLeft>
             { dateText() }
           </Balloon>
